@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>Test Input</TITLE>
+<script type="text/javascript">
+
+function testResults () {
+    var testVar = document.getElementById("inputbox").value
+
+	var a = testVar;
+	var b = a.split(',');
+        
+        console.log(b);
+	
+    var c = b.map(Number);
+	   console.log(c);
+
+   
+    var d = maxMinAvg(c)
+    function maxMinAvg(arr) { 
+        var max = arr[0];
+        var min = arr[0];
+        var sum = arr[0];
+        
+        for (var i = 1; i < arr.length; i++) {
+        
+            if (arr[i] > max) {
+            max = arr[i];
+             }
+            
+            if (arr[i] < min) {
+            min = arr[i];
+             }
+        
+            sum = sum + arr[i];
+            }
+            
+            var avg = sum / arr.length;
+
+        console.log(min)
+        console.log(max)
+        console.log(avg)
+
+        return [max, min, avg];
+        
+        }
+
+    
+    alert ("Max: " + d[0] + "\n" +  "Min:" + d[1] +"\n" +  "Avg:" +d[2]);
+
+
+
+}
+</SCRIPT>
+
+</HEAD>
+<BODY>
+<FORM NAME="myform" ACTION="" METHOD="GET">Enter values in the box: <BR>
+<INPUT TYPE="text" id="inputbox" VALUE=""><P>
+<INPUT TYPE="button" NAME="button" Value="Click" onClick="testResults()">
+</FORM>
+</BODY>
+</HTML>

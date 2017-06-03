@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>Test Input</TITLE>
+<script type="text/javascript">
+
+var x = Math.floor((Math.random() * 100) + 1);  
+console.log(x);
+
+var guess = 0
+        
+function testResults () {
+    var testVar = document.getElementById("inputbox").value
+    
+    
+	   if (testVar < x){
+        alert ("Clue: Value too LOW"); 
+        } 
+
+        if (testVar > x){
+        alert ("Clue: Value too HIGH");  
+         }
+
+        if (testVar == x){
+        alert ("Congratulations ");  
+        }
+     
+        guess++
+            if (guess > 2) {
+            document.getElementById("button").disabled = true;
+            alert("Max Trial Limit");
+        }
+  
+    }
+    
+    
+
+</SCRIPT>
+
+</HEAD>
+<BODY>
+<h1>Guess the number!</h1>
+<FORM NAME="myform" ACTION="" METHOD="GET">Enter values in the box: <BR>
+<INPUT TYPE="text" id="inputbox" VALUE=""><P>
+<INPUT TYPE="button" id="button" Value="Click" onClick="testResults()">
+</FORM>
+</BODY>
+</HTML>
