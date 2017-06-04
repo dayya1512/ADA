@@ -1,0 +1,41 @@
+<html>
+<head>
+	<div id="sample">
+		
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+
+
+	<head>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+
+		$("#button2").click(function(){
+        $.ajax ({
+        url: "https://cryptic-retreat-88314.herokuapp.com/api/shops",
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function(result){
+        $("#stuff").html( "<strong>" + JSON.stringify(result) + "</strong>" );
+        }
+        });
+    });
+
+			
+
+		});
+	
+	</script>
+	</head>
+
+	<body>
+	<button id="button2">Click Here</button>
+	<div id="stuff"></div>
+	</body>
+
+
+
+</html>

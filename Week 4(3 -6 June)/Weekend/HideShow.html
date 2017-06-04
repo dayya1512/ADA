@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").hide(10);//faster
+    });
+    $("#show").click(function(){
+        $("p").show(1000); //slower
+    });
+});
+</script>
+</head>
+<body>
+<p>If you click on the "Hide" button, I will disappear.</p>
+<p>The hide button is set to 10 ms (faster), while the show button button is set to 1000 ms (slower)</p> 
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+</body>
+</html>

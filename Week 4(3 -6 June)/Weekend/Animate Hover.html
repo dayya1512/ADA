@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+	$(document).ready(function(){
+   	 $("div").hover(function(){ 
+   	 	var div=$("div");
+   	 	div.animate({left:'300px'},"slow");
+   	 	div.animate({fontSize:'3em'},"slow");
+   	 });
+	});
+
+
+
+</script>
+</head>
+<body>
+
+<div style="background:#98bf21;height:500px;width:500px;position:absolute;">Hooooo</div>
+<div style="height:100px;width:500px;">Using Hover</div>
+<p>Paragraph 1</p>
+
+<div>Using Hover</div>
+
+</body>
+</html>

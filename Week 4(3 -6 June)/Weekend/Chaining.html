@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").css("color", "red").fadeOut(2000).delay(1000).fadeIn(2000);
+    });
+});
+</script>
+</head>
+<body>
+
+<p>Hidayah note: There is a technique called chaining, that allows us to run multiple jQuery commands, one after the other, on the same element(s). This will allow p to change to red first, then fade out for 20ms, then delay 10ms then fade in 20ms</p>
+
+<button>Click me</button>
+
+</body>
+</html>
