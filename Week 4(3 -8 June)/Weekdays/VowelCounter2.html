@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript">
+
+var string =""
+var count = 0
+
+function testResults () 
+{
+    for(i = 0; i< string.length; i++) 
+    {
+        if (string.charAt(i).match(/[aeiouAEIOU]/))
+        {
+           
+            count++;
+
+
+        }
+ 	}
+
+ 	return count;
+};
+
+console.log(testResults("a")); 
+
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

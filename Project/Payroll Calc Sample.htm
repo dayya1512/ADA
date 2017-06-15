@@ -1,0 +1,148 @@
+
+
+<html>
+  <!DOCTYPE html>
+<html>
+  <head>
+     <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	  <head>
+   <title>Basic Math Operations in JQuery</title>
+	<style type="text/css">
+.form-style-3{
+    margin: auto;
+    width: 60%;
+   padding: 10px;
+	max-width: 420px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	color: red;
+	font-weight: bold;
+	font-size: 16px;
+}
+.form-style-3 label{
+	display:block;
+	margin-bottom: 10px;
+}
+.form-style-3 label > span{
+	float: left;
+	width: 180px;
+	color: blue;
+	font-weight: bold;
+	font-size: 15px;
+	text-shadow: 1px 1px 1px #fff;
+}
+.form-style-3 fieldset{
+	border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	margin: 0px 0px 0px 0px;
+	border: 5px solid red;
+	padding: 20px;
+	background: lightgreen;
+
+	box-shadow: inset 0px 0px 15px black;
+	-moz-box-shadow: inset 0px 0px 15px black;
+	-webkit-box-shadow: inset 0px 0px 15px black;
+}
+.form-style-3 fieldset legend{
+	color: blue;
+	border-top: 2px solid red;
+	border-left: 2px solid red;
+	border-right: 2px solid red;
+	border-radius: 6px 6px 0px 0px blue;
+	-webkit-border-radius: 6px 6px 0px 0px;
+	-moz-border-radius: 6px 6px 0px 0px;
+	background: yellow;
+	padding: 0px 12px 3px 12px;
+	box-shadow: -0px -1px 2px black;
+	-moz-box-shadow:-0px -1px 2px black;
+	-webkit-box-shadow:-0px -1px 2px black;
+	font-weight: bold;
+	font-size: 18px;
+}
+.form-style-3 textarea{
+	width:320px;
+	height:100px;
+}
+.form-style-3 input[type=text],
+.form-style-3 input[type=date],
+.form-style-3 input[type=datetime],
+.form-style-3 input[type=number],
+.form-style-3 input[type=search],
+.form-style-3 input[type=time],
+.form-style-3 input[type=url],
+.form-style-3 input[type=email],
+.form-style-3 select, 
+.form-style-3 textarea{
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border: 2px solid blue;
+	outline: none;
+	color: blue;
+	padding: 5px 8px 5px 8px;
+	box-shadow: inset 1px 1px 4px black;
+	-moz-box-shadow: inset 1px 1px 4px black;
+	-webkit-box-shadow: inset 1px 1px 4px black;
+	background: yellow;
+	width:30%;
+	font-weight: bold;
+	font-size: 15px;
+
+}
+</style></head>
+<script>
+
+	  $(document).ready(function() {
+	    function compute_salary() {
+          var days_worked = $('#days').val();
+          var rate_per_day = $('#rates').val();
+		  var tax = $('#tax').val();
+		  
+          var total_gross_salary = days_worked * rate_per_day;
+		  
+		  var total_netpay = (total_gross_salary - tax);
+		  
+          $('#salary').val(total_gross_salary.toFixed(2));
+		  $('#net_pay').val(total_netpay.toFixed(2));
+        }
+
+        $('#days, #rates,#tax').change(compute_salary);
+		
+	  });
+	</script>
+
+<body>
+ <div class="form-style-3">
+<form>
+<br><br>
+<fieldset><legend>PAYROLL PROGRAM IN JQUERY</legend><br>
+
+<label for="field1">
+
+<span>Number of Day's Work<span class="required"></span></span>
+ &nbsp;&nbsp;<input type="number" name="days"  id="days" class="input-field" name="field1"  autofocus /> </label>
+
+<label for="field1">
+<span>Salary Rate Per Day<span class="required"></span></span>
+$<input type="number" name="rates" id="rates" class="input-field" name="field1"   /> <label> 
+
+
+<br> DISPLAY RESULTS <br><br>
+
+<label for="field1"><span> Gross Pay  <span class="required"></span></span>
+$<input type="text" name="salary" id="salary" class="salary" readonly/> </label> 
+
+<label for="field1"><span> TAX <span class="required"></span></span>
+$<input type="text" name="tax" class="tax" id="tax"/> </label> 
+
+<label for="field1"><span> Net Pay  <span class="required"></span></span>
+$<input type="text" name="net_pay" id="net_pay" class="net_pay" readonly/> </label> 
+  <br> <font color="blue">
+  Created By Mr. Jake R. Pomperada
+  </font>
+<center>
+</fieldset>
+</form>
+</div>
+ </body>
+</html>

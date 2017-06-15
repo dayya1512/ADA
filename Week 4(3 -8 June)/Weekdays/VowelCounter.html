@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<TITLE>Test Input</TITLE>
+<script type="text/javascript">
+
+var vowel = ["a", "e", "i","o","u"]
+var count = 0
+
+function testResults () {
+    var testVar = document.getElementById("inputbox").value
+
+
+    for( count= 0; count< testVar.length; count++) 
+    {
+        if (testVar== vowel)
+        {
+            count=count+1;
+        }
+    };
+
+    
+console.log(count); 
+
+
+</SCRIPT>
+
+</HEAD>
+<BODY>
+<h1>Vowel Counter</h1>
+<FORM NAME="myform" ACTION="" METHOD="GET">Enter words in the box: <BR>
+<INPUT TYPE="text" id="inputbox" VALUE=""><P>
+<INPUT TYPE="button" id="button" Value="Click" onClick="testResults()">
+</FORM>
+</BODY>
+</HTML>

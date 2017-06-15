@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A javascript calculator</title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			font-size: bold 14px;
+		}
+		#calculator{
+			background: red;
+			width: 288px;
+			height: auto;
+			background: linear-gradient(#5CD6EF,#31B0C9);
+			margin: 100px auto;
+			padding: 10px;
+		}
+		#result{
+			background: #696969;
+			height: 40px;
+			margin: 5px;
+			background: white;
+			border: 3px inset #808080;
+		}
+		#calculator #key{
+			margin: 0px 7px;
+		}
+		#calculator #key span.button{
+			display: inline-block;
+			background: #E5FCFB;
+			box-shadow: -2px 2px 4px black;
+			width: 40px;
+			margin: 0px 5px 10px 0px;
+			padding: 10px;
+			text-align: center;
+			cursor: pointer;
+		}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var screen = document.getElementById("result");
+				var elem = document.querySelectorAll("span.button");
+				var result = "";
+
+				for(var i=0;i<elem.length;i++){
+					elem[i].addEventListener("click",function(){
+						
+						if(this.innerHTML=='='){
+							result = eval(screen.innerHTML);
+							screen.innerHTML = result;
+						}
+
+						else if(this.innerHTML == 'C'){
+							result="";
+							screen.innerHTML = result;
+						}
+
+						else{
+							result += this.innerHTML
+							screen.innerHTML = result;
+							
+						}
+					
+					});
+				}
+			}
+		</script>
+	</head>
+	<body>
+	<div id="calculator">
+	<div id="result"></div>
+		<div id="key">
+			<span class="button">7</span>
+		    <span class="button">8</span>
+		    <span class="button">9</span>
+		    <span class="button">+</span>
+		    <span class="button">4</span>
+		    <span class="button">5</span>
+		    <span class="button">6</span>
+		    <span class="button">/</span>
+		    <span class="button">3</span>
+		    <span class="button">2</span>
+		    <span class="button">1</span>
+		    <span class="button">-</span>
+		    <span class="button eval">=</span>
+		    <span class="button clear">C</span>
+		    <span class="button">%</span>
+		    <span class="button">*</span>
+		</div>
+	    
+	</div>
+		
+	</body>
+</html>

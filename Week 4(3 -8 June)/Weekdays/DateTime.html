@@ -1,0 +1,47 @@
+<html>
+<head>
+	<script type="text/javascript">
+	</script>
+</head>
+
+<body>
+	<title>Date and Time</title>
+	<script type="text/javascript">
+
+	var today=new Date();
+	console.log(today);
+
+	var endDate=new Date('June 22,2017 00:00:00');
+	console.log(endDate);
+	
+	var difference=endDate.getTime() - today.getTime();
+	console.log(difference);
+
+	var DAY_IN_SECONDS=86400000
+	
+
+	var differenceInDays=difference/DAY_IN_SECONDS;
+	console.log(differenceInDays);
+
+	
+	var leftOverDays= differenceInDays - Math.floor(differenceInDays);
+	console.log(leftOverDays);
+
+	var differenceInHours = leftOverDays * 24
+	console.log(differenceInHours);
+
+
+	var leftOverHours= differenceInHours - Math.floor(differenceInHours);
+	console.log(leftOverHours);
+
+	var differenceInMins = leftOverHours * 60
+	console.log(differenceInMins);
+ 
+	var msg=Math.floor(differenceInDays)+ "days" + Math.floor(differenceInHours) + ' hours'  + Math.floor(differenceInMins) + " mins left to FREEDOM!";
+	document.write(msg);
+
+
+	</script>
+
+</body>
+</html>
