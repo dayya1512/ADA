@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id ="video">
+        <video controls autoplay>
+        	<source src=" video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="controls">
+    	<button id="play">Play</button>
+    	<button id="pause">Pause</button>
+
+	 <script type="text/javascript">
+	 window.onload=function(){
+	 	var video=document.getElementById("video");
+	 	var	playBtn=document.getElementById("play");
+	 	var	pauseBtn=document.getElementById("pause");
+	 	playBtn.addEventListener("click", function(e){
+	 		video.play();
+	 	}
+	 	pauseBtn.addEventListener("click", function(e){
+	 		video.pause();
+	 	}
+	}
+	 </script>
+</body>
+</html>

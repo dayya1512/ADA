@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+
+</head>
+
+<body>
+    <video id ="video" controls autoplay >
+        	<source src=" video.mp4" type="video/mp4">
+   	</video>
+
+    <div id="controls">
+    	<button id="play">Play</button>
+    	<button id="pause">Pause</button>
+    	<input type="range" id="seekbar">
+    </div>
+
+
+	 <script type="text/javascript">
+	 window.onload=function(){
+	 	var video=document.getElementById("video");
+	 	var seekbar=document.getElementById("seekbar");
+	 	var	playBtn=$("#play");
+	 	var	pauseBtn=$("#pause");
+	 	
+		$("#play").click(function(){
+	 		video.play();
+	 	});
+
+		$("#pause").click(function(){
+	 		video.pause();
+	 	});
+
+		$("#seekbar").change(function(){
+	 		var time=video.duration*(seekbar.value/100);
+	 		video.currentTime=time;
+	 	});
+
+	 	video.addEventListener("timeupdate", function (e){
+	 		var value = (100/video.duration)*video.currentTime;
+	 		seekbar.value=value;
+	 	});
+
+	 	seekbar.addEventListener("mousedown", function (e){
+	 		video.pause();
+	 	});
+
+	 	seekbar.addEventListener("mouseup", function (e){
+	 		video.play();
+	 	});
+
+	 	$(document).on('click', "video", function (e) {
+    	var video = $(this).get(0);
+    	if (video.paused === false) {
+        video.pause();
+    		} 
+
+    	else {
+       		 video.play();
+   			 }
+
+    	return false;
+		});
+	}
+	 </script>
+
+</body>
+</html>
